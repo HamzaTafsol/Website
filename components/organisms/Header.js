@@ -2,7 +2,6 @@
 import {
   AppBar,
   Toolbar,
-  Typography,
   makeStyles,
   Button,
   IconButton,
@@ -12,6 +11,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 // Definimos los links del menu
 const headersData = [
@@ -39,6 +39,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#abe236",
     height: "100px",
     justifyContent: "center",
+    padding: "4rem",
     paddingRight: "150px",
     paddingLeft: "150px",
     boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.15)",
@@ -46,14 +47,7 @@ const useStyles = makeStyles(() => ({
       paddingLeft: 0,
     },
   },
-  logo: {
-    fontFamily: "Work Sans, sans-serif",
-    fontWeight: 600,
-    color: "#FFFEFE",
-    textAlign: "left",
-  },
   menuButton: {
-    fontFamily: "Open Sans, sans-serif",
     fontWeight: 700,
     fontSize: "0.9rem !important",
     marginLeft: "10px",
@@ -68,11 +62,20 @@ const useStyles = makeStyles(() => ({
   drawerContainer: {
     padding: "20px 30px",
   },
+  menuItem: {
+    color: "#2c2c2c",
+    fontWeight: 700,
+    fontSize: "0.9rem !important",
+    marginLeft: "0px",
+    textTransform: "none",
+    borderRadius: "3rem",
+    padding: "0.7rem",
+  },
 }));
 
 // Definimos el header
 const Header = () => {
-  const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
+  const { header, menuButton, toolbar, drawerContainer, menuItem } = useStyles();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -100,7 +103,7 @@ const Header = () => {
   const displayDesktop = () => {
     return (
       <Toolbar className={toolbar}>
-        Dogtor
+        <Image src="/logo.svg" width="250" height="70" />
         <div>{getMenuButtons()}</div>
       </Toolbar>
     );
@@ -136,7 +139,9 @@ const Header = () => {
           <div className={drawerContainer}>{getDrawerChoices()}</div>
         </Drawer>
 
-        <div>{DogtorLogo}</div>
+        <div>
+          <Image src="/logo.svg" width="70" height="25" />
+        </div>
       </Toolbar>
     );
   };
@@ -144,27 +149,22 @@ const Header = () => {
   const getDrawerChoices = () => {
     return headersData.map(({ label, href }) => {
       return (
-        <Link href="/">
-          <MenuItem>{label}</MenuItem>
+        <Link href={href} key={href}>
+          <MenuItem className={menuItem}>{label}</MenuItem>
         </Link>
       );
     });
   };
 
-  const DogtorLogo = (
-    <Typography variant="h6" component="h1" className={logo}>
-      Dogtor
-    </Typography>
-  );
-
   const getMenuButtons = () => {
     return headersData.map(({ label, href }) => {
       return (
         <Button
+          href={href}
+          key={href}
           {...{
             key: label,
             color: "inherit",
-            to: href,
             className: menuButton,
           }}
         >
