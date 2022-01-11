@@ -12,6 +12,13 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Search from "../molecules/Search";
+import { ThemeProvider } from "@material-ui/core/styles";
+import Theme from "../../styles/Theme";
+
+// Iconos
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import AppRegistrationOutlinedIcon from "@mui/icons-material/AppRegistrationOutlined";
 
 // Definimos los links del menu
 const headersData = [
@@ -37,30 +44,45 @@ const headersData = [
 const useStyles = makeStyles(() => ({
   header: {
     backgroundColor: "#abe236",
-    height: "100px",
     justifyContent: "center",
-    padding: "4rem",
-    paddingRight: "150px",
-    paddingLeft: "150px",
+    padding: "0",
     boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.15)",
     "@media (max-width: 900px)": {
       paddingLeft: 0,
     },
+    position: "relative",
   },
   menuButton: {
     fontWeight: 700,
-    fontSize: "0.9rem !important",
     marginLeft: "10px",
     textTransform: "none",
     borderRadius: "3rem",
     padding: "0.7rem",
+    color: "white",
+  },
+  menuButtonWhite: {
+    fontWeight: 700,
+    marginLeft: "10px",
+    textTransform: "none",
+    borderRadius: "3rem",
+    padding: "0.7rem",
+    color: "primary",
+    "&:hover": {
+      background: "#ffffff",
+    },
   },
   toolbar: {
+    padding: "1.5rem",
     display: "flex",
+    justifyContent: "flex-start",
+  },
+  mobileToolbar: {
+    width: "100vw",
     justifyContent: "space-between",
   },
   drawerContainer: {
     padding: "20px 30px",
+    backgroundColor: "rgba(0, 0, 0, 0.02)",
   },
   menuItem: {
     color: "#2c2c2c",
@@ -71,11 +93,29 @@ const useStyles = makeStyles(() => ({
     borderRadius: "3rem",
     padding: "0.7rem",
   },
+  logoContainer: {
+    marginRight: "1rem",
+  },
+  buttonsContainer: {
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "flex-end",
+  },
 }));
 
 // Definimos el header
 const Header = () => {
-  const { header, menuButton, toolbar, drawerContainer, menuItem } = useStyles();
+  const {
+    header,
+    logoContainer,
+    menuButton,
+    menuButtonWhite,
+    buttonsContainer,
+    toolbar,
+    mobileToolbar,
+    drawerContainer,
+    menuItem,
+  } = useStyles();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -104,7 +144,22 @@ const Header = () => {
     return (
       <Toolbar className={toolbar}>
         <Image src="/logo.svg" width="250" height="70" />
+        <Search />
         <div>{getMenuButtons()}</div>
+        <div className={buttonsContainer}>
+          <Button variant="contained" color="secondary" className={menuButton}>
+            <PersonOutlineOutlinedIcon />
+            Iniciar Sesion
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className={menuButtonWhite}
+          >
+            <AppRegistrationOutlinedIcon />
+            Registrarse
+          </Button>
+        </div>
       </Toolbar>
     );
   };
@@ -116,7 +171,7 @@ const Header = () => {
       setState((prevState) => ({ ...prevState, drawerOpen: false }));
 
     return (
-      <Toolbar>
+      <Toolbar className={mobileToolbar}>
         <IconButton
           {...{
             edge: "start",
@@ -136,12 +191,30 @@ const Header = () => {
             onClose: handleDrawerClose,
           }}
         >
-          <div className={drawerContainer}>{getDrawerChoices()}</div>
+          <div className={drawerContainer}>
+            {getDrawerChoices()}
+            <Button
+              variant="contained"
+              color="secondary"
+              className={menuButton}
+            >
+              <PersonOutlineOutlinedIcon />
+              Iniciar Sesion
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              className={menuButtonWhite}
+            >
+              <AppRegistrationOutlinedIcon />
+              Registrarse
+            </Button>
+          </div>
         </Drawer>
-
-        <div>
-          <Image src="/logo.svg" width="70" height="25" />
+        <div className={logoContainer}>
+          <Image src="/logo.svg" width="100" height="50" />
         </div>
+        <Search />
       </Toolbar>
     );
   };
@@ -175,11 +248,13 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <AppBar className={header}>
-        {mobileView ? displayMobile() : displayDesktop()}
-      </AppBar>
-    </header>
+    <ThemeProvider theme={Theme}>
+      <header>
+        <AppBar className={header}>
+          {mobileView ? displayMobile() : displayDesktop()}
+        </AppBar>
+      </header>
+    </ThemeProvider>
   );
 };
 

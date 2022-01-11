@@ -6,10 +6,10 @@ import { red } from "@material-ui/core/colors";
 const Theme = createTheme({
   palette: {
     primary: {
-      main: "#abe236",
+      main: "#ffffff",
     },
     secondary: {
-      main: "#19857b",
+      main: "#2c2c2c",
     },
     error: {
       main: red.A400,
@@ -17,6 +17,22 @@ const Theme = createTheme({
     background: {
       default: "#fff",
     },
+    text: {
+      primary: "#2c2c2c",
+      secondary: "#2c2c2c",
+    }
+  },
+  // font color
+  typography: {
+    fontFamily: [
+      "Roboto",
+      "Helvetica",
+      "Arial",
+      "sans-serif",
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+    ].join(","),
   },
 });
 
