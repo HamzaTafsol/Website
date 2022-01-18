@@ -3,6 +3,41 @@ import { Container, Select, MenuItem } from "@material-ui/core";
 
 // Componentes
 import AddressBar from "../components/molecules/AddressBar";
+import Categories from "../components/molecules/Categories";
+
+// Categorias
+const categories = [
+  {
+    id: 1,
+    name: "Restaurantes",
+    img: "/delivery.png",
+  },
+  {
+    id: 2,
+    name: "Tiendas",
+    img: "/stores.png",
+  },
+  {
+    id: 3,
+    name: "Market",
+    img: "/mercado.png",
+  },
+  {
+    id: 4,
+    name: "Mascotas",
+    img: "/mascotas.png",
+  },
+  {
+    id: 5,
+    name: "Farmacia",
+    img: "/farmacia.png",
+  },
+  {
+    id: 6,
+    name: "Lo que sea",
+    img: "/loquesea.png",
+  },
+];
 
 const Home = () => {
   return (
@@ -18,6 +53,7 @@ const Home = () => {
         </div>
       </h2>
       <AddressBar />
+      <Categories categories={categories} />
     </Container>
   );
 };
