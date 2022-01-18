@@ -1,6 +1,6 @@
 // importamos los componentes
 import SearchIcon from "@mui/icons-material/Search";
-import InputBase from '@mui/material/InputBase';
+import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 
 const Search = styled("div")(({ theme }) => ({
@@ -49,8 +49,10 @@ const SearchBox = (props) => {
         <SearchIcon />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder="Que necesitas? "
+        placeholder="¿Que necesitas? "
         inputProps={{ "aria-label": "search" }}
+        onChange={(e) => props.setValue(e.target.value)}
+        value={props.value}
       />
     </Search>
   );

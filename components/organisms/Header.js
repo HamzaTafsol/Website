@@ -8,12 +8,19 @@ import {
   Drawer,
   Link,
   MenuItem,
+  InputLabel,
+  FormControl,
+  Select,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Search from "../molecules/Search";
 import { ThemeProvider } from "@material-ui/core/styles";
+import LanguageIcon from "@mui/icons-material/Language";
+
+// Componentes propios
+import SearchBar from "../molecules/SearchBar";
+import Search from "../molecules/Search";
 import Theme from "../../styles/Theme";
 
 // Iconos
@@ -59,6 +66,31 @@ const useStyles = makeStyles(() => ({
     borderRadius: "3rem",
     padding: "0.7rem",
     color: "white",
+  },
+  languageBox: {
+    color: "white",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    "&:before": {
+      borderColor: "white",
+    },
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  languageBoxBlack: {
+    color: "black",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    "&:before": {
+      borderColor: "white",
+    },
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "1rem",
   },
   menuButtonWhite: {
     fontWeight: 700,
@@ -115,6 +147,8 @@ const Header = () => {
     mobileToolbar,
     drawerContainer,
     menuItem,
+    languageBox,
+    languageBoxBlack,
   } = useStyles();
 
   const [state, setState] = useState({
@@ -123,6 +157,10 @@ const Header = () => {
   });
 
   const { mobileView, drawerOpen } = state;
+
+  // Search
+  const [openSearch, setOpenSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const setResponsiveness = () => {
@@ -142,25 +180,55 @@ const Header = () => {
 
   const displayDesktop = () => {
     return (
-      <Toolbar className={toolbar}>
-        <Image src="/logo.svg" width="250" height="70" />
-        <Search />
-        <div>{getMenuButtons()}</div>
-        <div className={buttonsContainer}>
-          <Button variant="contained" color="secondary" className={menuButton}>
-            <PersonOutlineOutlinedIcon />
-            Iniciar Sesion
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            className={menuButtonWhite}
+      <>
+        <SearchBar
+          opened={openSearch}
+          setOpened={setOpenSearch}
+          value={searchValue}
+          setValue={setSearchValue}
+        />
+        <Toolbar className={toolbar}>
+          <Image src="/logo.svg" width="250" height="70" />
+          <div
+            onClick={() => {
+              setOpenSearch(!openSearch);
+            }}
           >
-            <AppRegistrationOutlinedIcon />
-            Registrarse
-          </Button>
-        </div>
-      </Toolbar>
+            <Search value={searchValue} setValue={setSearchValue} />
+          </div>
+          <div>{getMenuButtons()}</div>
+          <FormControl variant="standard" className={languageBox}>
+            <LanguageIcon
+              style={{
+                marginRight: "0.5rem",
+                marginLeft: "1rem",
+              }}
+            />
+            <Select value="ES-ES" className={languageBox}>
+              <MenuItem value="ES-ES">ES-ES</MenuItem>
+              <MenuItem value="EN-US">EN-US</MenuItem>
+            </Select>
+          </FormControl>
+          <div className={buttonsContainer}>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={menuButton}
+            >
+              <PersonOutlineOutlinedIcon />
+              Iniciar Sesion
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              className={menuButtonWhite}
+            >
+              <AppRegistrationOutlinedIcon />
+              Registrarse
+            </Button>
+          </div>
+        </Toolbar>
+      </>
     );
   };
 
@@ -193,6 +261,19 @@ const Header = () => {
         >
           <div className={drawerContainer}>
             {getDrawerChoices()}
+            <FormControl variant="standard" className={languageBoxBlack}>
+              <LanguageIcon
+                style={{
+                  marginRight: "0.5rem",
+                  marginLeft: "1rem",
+                  marginBottom: "1rem",
+                }}
+              />
+              <Select value="ES-ES" className={languageBoxBlack}>
+                <MenuItem value="ES-ES">ES-ES</MenuItem>
+                <MenuItem value="EN-US">EN-US</MenuItem>
+              </Select>
+            </FormControl>
             <Button
               variant="contained"
               color="secondary"
@@ -214,7 +295,7 @@ const Header = () => {
         <div className={logoContainer}>
           <Image src="/logo.svg" width="100" height="50" />
         </div>
-        <Search />
+        <Search value={searchValue} setValue={setSearchValue} />
       </Toolbar>
     );
   };

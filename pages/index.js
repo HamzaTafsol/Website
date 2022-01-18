@@ -2,7 +2,7 @@ const Home = () => {
   return (
     <div style={{
     }}>
-      <h1>Index</h1>
+      <h1></h1>
     </div>
   );
 };
