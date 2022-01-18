@@ -1,6 +1,9 @@
 import styles from "./index.module.scss";
 import { Container, Select, MenuItem } from "@material-ui/core";
 
+// Componentes
+import AddressBar from "../components/molecules/AddressBar";
+
 const Home = () => {
   return (
     <Container>
@@ -14,6 +17,7 @@ const Home = () => {
           </Select>
         </div>
       </h2>
+      <AddressBar />
     </Container>
   );
 };
