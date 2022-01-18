@@ -1,5 +1,5 @@
 // Reseteamos los estilos
-import "../styles/reset.css";
+import "../styles/reset.scss";
 
 // Importmanos los hooks
 import { useEffect } from "react";
