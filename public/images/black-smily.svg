@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.83" height="18.83" viewBox="0 0 18.83 18.83">
+  <g id="vuesax_linear_emoji-normal" data-name="vuesax/linear/emoji-normal" transform="translate(-492 -380)">
+    <g id="emoji-normal" transform="translate(492 380)">
+      <path id="Vector" d="M5.492,15.692H10.2c3.923,0,5.492-1.569,5.492-5.492V5.492C15.692,1.569,14.123,0,10.2,0H5.492C1.569,0,0,1.569,0,5.492V10.2C0,14.123,1.569,15.692,5.492,15.692Z" transform="translate(1.569 1.569)" fill="none" stroke="#000225" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-2" data-name="Vector" d="M0,0A2.027,2.027,0,0,0,2.856,0" transform="translate(5.492 6.473)" fill="none" stroke="#000225" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-3" data-name="Vector" d="M0,0A2.027,2.027,0,0,0,2.856,0" transform="translate(10.482 6.473)" fill="none" stroke="#000225" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-4" data-name="Vector" d="M.706,0H6.355a.7.7,0,0,1,.706.706A3.531,3.531,0,0,1,0,.706.7.7,0,0,1,.706,0Z" transform="translate(5.884 10.2)" fill="none" stroke="#000225" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-5" data-name="Vector" d="M0,0H18.83V18.83H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

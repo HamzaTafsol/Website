@@ -1,0 +1,108 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.address_bar_icon {
+  color: #abe236;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: axiforma-light;
+  /* src: url("../fonts/Axiforma_new/Axiforma-light.ttf"); */
+  /* src: url("../fonts/Axiforma/Kastelov\ -\ Axiforma\ Light.otf"); */
+  /* src: url("../fonts/Axiforma/axiforma/Axiforma-Light.ttf"); */
+  /* src: url("../fonts/Axiforma/axiforma/Axiforma-ExtraBoldItalic.ttf"); */
+  /* src: url("../../assets/fonts/Axiforma/axiforma/Axiforma-BoldItalic.ttf"); */
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Light.ttf");
+
+
+}
+
+
+/* Set Fonts */
+@font-face {
+  font-family: "axiforma-reg";
+  /* src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Regular.ttf") */
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Regular.ttf");
+  /* format("truetype"); */
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "axiforma-bold";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Bold.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "axiforma-light";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Light.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "axiforma-thin";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Thin.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "axiforma-med";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Medium.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "axiforma-extra-bold";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-ExtraBold.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "axiforma-semi-bold";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-SemiBold.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "axiforma-book";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Book.ttf");
+  font-weight: normal;
+}
+div#bdr_0:focus-visible {
+  outline:  0px !important;
+} 
+span,
+p,
+ul,
+li,
+a,
+button {
+  /* font-family: "axiforma-reg"; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: "axiforma-bold"; */
+}
+
+/* .js-focus-visible {
+  opacity: 1;
+}
+
+html {
+  opacity: 0;
+} */

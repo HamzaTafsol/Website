@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.281" height="19.5" viewBox="0 0 20.281 19.5">
+  <g id="Group_18097" data-name="Group 18097" transform="translate(-15.859 -16.25)">
+    <g id="filter" transform="translate(16 17)">
+      <path id="Path" d="M6.529.5H0" transform="translate(0.859 14.623)" fill="none" stroke="#abe236" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path-2" data-name="Path" d="M11.752.5H0" transform="translate(7.388 14.623)" fill="none" stroke="rgba(171,226,54,0.22)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path-3" data-name="Path" d="M6,3A3,3,0,1,0,3,6,3,3,0,0,0,6,3Z" transform="translate(4.206 12)" fill="#000225" stroke="#abe236" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Path-4" data-name="Path" d="M0,.5H6.529" transform="translate(12.611 2.377)" fill="none" stroke="#abe236" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path-5" data-name="Path" d="M0,.5H11.752" transform="translate(0.859 2.377)" fill="none" stroke="rgba(171,226,54,0.26)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path-6" data-name="Path" d="M0,3A3,3,0,1,0,3,0,3,3,0,0,0,0,3Z" transform="translate(9.793)" fill="#000225" stroke="#abe236" stroke-miterlimit="10" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
