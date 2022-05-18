@@ -37,9 +37,9 @@ export const dogtorstyles = makeStyles({
             fontFamily: "axiforma-thin",
           },
           "& .business": {
-            fontFamily: 'axiforma-light',
-            position:"relative",
-            fontWeight:"100",
+            fontFamily: "axiforma-light",
+            position: "relative",
+            fontWeight: "100",
           },
           "& span.business:before ": {
             content: '""',
@@ -49,9 +49,8 @@ export const dogtorstyles = makeStyles({
             top: "-21px",
             height: "36px",
             backgroundImage: "url(/images/small-icon-d4b.svg)",
-            "@media (max-width:768px)":{
-              backgroundImage: "none"
-
+            "@media (max-width:768px)": {
+              backgroundImage: "none",
             },
           },
           "& span": {

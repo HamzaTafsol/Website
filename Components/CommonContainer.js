@@ -16,8 +16,32 @@ export const CommonContainer = makeStyles({
       width: "100%",
     },
   },
+  footerContainer: {
+    width:"93%",
+    margin: "auto"
+
+  },
+  landingContainer:{
+    width:"100%",
+    margin: "auto",
+    
+    "@media (max-width:1920px)": {
+      height:"100vh"
+  },
+    "@media (max-width:1600px)": {
+      height:"unset"
+  },
+},
   midContainer: {
     width: "80%",
     margin: "auto",
+  },
+  smallContainer: {
+    width: "40%",
+    margin: "100px auto",
+  },
+  verySmallContainer: {
+    width: "23%",
+    margin: "100px auto",
   },
 });

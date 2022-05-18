@@ -140,6 +140,7 @@ export { default as Aventra } from "../assets/images/aventra.svg";
 export { default as Sorpredeme } from "../assets/images/sorprendeme.svg";
 export { default as ChefPersonal } from "../assets/images/chef-personal.svg";
 export { default as Genio1 } from "../assets/images/genio1.svg";
+export { default as mastercards } from "../assets/images/master_card.png";
 
 // export { default as logo } from "../assets/images/Logo.png";
 // export { default as WallClock } from "../assets/images/wall-clock-mockup.png";

@@ -21,13 +21,21 @@
     "@mui/icons-material": "^5.4.2",
     "@mui/material": "^5.4.2",
     "@mui/styles": "^5.4.2",
+    "firebase": "^9.8.1",
+    "google-map-react": "^2.1.10",
+    "moment": "^2.29.3",
     "next": "12.1.0",
+    "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
+    "react-countdown": "^2.3.2",
+    "react-date-countdown-timer": "^1.1.0",
     "react-dom": "17.0.2",
     "react-elastic-carousel": "^0.11.5",
     "react-icons": "^4.3.1",
+    "react-phone-input-2": "^2.15.0",
     "react-router-dom": "^6.2.1"
   },
+  
   "devDependencies": {
     "@svgr/webpack": "^6.2.1",
     "eslint": "8.9.0",

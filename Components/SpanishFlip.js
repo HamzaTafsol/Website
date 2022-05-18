@@ -20,8 +20,7 @@ import { typoMain } from "./TypographyMain";
 import Carousel from "react-elastic-carousel";
 import SubcatModal from "./SubcatModal";
 const more_icon = "/images/more_icon.svg";
-
-
+import Link from "next/link";
 
 // Category
 function CircleItem({
@@ -65,18 +64,17 @@ function CircleItemSubCat({ image, title, data, setSelectedData }) {
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
 
-const modalOpenCat = "Cuidadog"
+  const modalOpenCat = "Cuidadog";
   const handleClick = (title) => {
     if (title == modalOpenCat) {
-      setOpenModal(!open)
+      setOpenModal(!open);
       // handleOpen();
     }
   };
 
   useEffect(() => {
-console.log({open})
-  }, [open])
-  
+    console.log({ open });
+  }, [open]);
 
   const classes = SpanishFlipStyle();
   const typo = typoMain();
@@ -84,21 +82,26 @@ console.log({open})
 
   return (
     <>
-    <div className="banner-circle-card-col" 
-    onClick={() => handleClick(title)}
-    
-    >
-      <div className="banner-circle-card">
-        <img alt="" className="" src={image} />
+      <div
+        className="banner-circle-card-col"
+        onClick={() => handleClick(title)}
+      >
+        <div className="banner-circle-card">
+          <img alt="" className="" src={image} />
 
-        {!isMobile && <p>{title}</p>}
+          {!isMobile && <p>{title}</p>}
+        </div>
+        <p className="title-on-mobile">{title}</p>
       </div>
-      <p className="title-on-mobile">{title}</p>
 
-    </div>
-
-{<SubcatModal setOpenModal={setOpenModal}  name={modalOpenCat} open={open} handleClose={handleClick}/>}
-
+      {
+        <SubcatModal
+          setOpenModal={setOpenModal}
+          name={modalOpenCat}
+          open={open}
+          handleClose={handleClick}
+        />
+      }
     </>
   );
 }
@@ -141,10 +144,12 @@ function SpanishFlip({
   setSelectedData,
   selectedCategory,
   setSelectedCategory,
+  setterFunction,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showMore, setShowMore] = useState(true);
   const [openLocationModal, setOpenLocationModal] = useState(false);
+  const [login, setLogin] = useState(false);
   const isMobile = useMediaQuery("@media (max-width:768px)");
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -156,7 +161,9 @@ function SpanishFlip({
     // color: theme.palette.text.secondary,
   }));
   const conti = CommonContainer();
-
+  React.useEffect(() => {
+    setLogin(localStorage.getItem("login"));
+  }, []);
   const classes = SpanishFlipStyle();
 
   const typo = typoMain();
@@ -201,7 +208,7 @@ function SpanishFlip({
         <Grid md={12} style={{ width: "80%" }}>
           {isMobile ? (
             <SliderSection />
-          ) : (
+          ) : !login ? (
             <div className="address-box">
               <div className="address-flag-icon">
                 <img src={flagIcon} className="flag-icon" />
@@ -225,16 +232,26 @@ function SpanishFlip({
                 />
               </Grid>
               <Grid lg={4} md={4} className="use-current-location">
-                <span>Usar ubicacion actual</span>
+                <span style={{ cursor: "pointer" }}>Usar ubicacion actual</span>
               </Grid>
             </div>
+          ) : (
+            <>
+              <div style={{ textAlign: "center", fontSize: "40px", color: "#000225", fontFamily: "axiforma-book", paddingTop: "40px" }}>Entrega en 
+                <span style={{ fontFamily: "axiforma-bold", paddingLeft: "10px", textDecoration: "underline" }}>
+                  <Link href="#!">
+                    Calle Eduardo Chillida 219B
+                  </Link>
+                </span>
+              </div>
+            </>
           )}
         </Grid>
       </Grid>
       <Grid
         container
         spacing={2}
-        style={{ justifyContent: "center" }}
+        style={{ justifyContent: "center" }}F
         className={classes.cusCont}
       >
         <div className="banner-cards">
@@ -306,6 +323,7 @@ function SpanishFlip({
             <AiOutlineCloseCircle
               className="close-icon"
               onClick={() => {
+                setterFunction(0);
                 setShowMore(true);
                 setSelectedCategory({});
               }}

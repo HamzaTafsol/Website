@@ -154,6 +154,7 @@ export const DrawerStyles = makeStyles({
       marginLeft: "25px",
       marginTop: "15%",
       lineHeight: 1,
+      marginBottom:"30px",
       display: "flex",
       alignItems: "center",
       "& span": {

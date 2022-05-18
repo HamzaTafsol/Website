@@ -13,21 +13,28 @@ import Carousel from "react-elastic-carousel";
 const clockIcon = "/images/clock-icon.png";
 const likeIcon = "/images/like-icon.png";
 
-function BestResturantCard({ image, buttonText }) {
+function BestResturantCard({ image, buttonText, index,data }) {
   const [isHover, setIsHover] = useState(false);
+  console.log(index);
   return (
     <div
       className={`best-resturant-card-2 ${isHover && "hover-color-2"}`}
       onMouseOver={() => {
-        setIsHover(true);
-        return;
+
+          setIsHover(true);
+          return;
       }}
       onMouseLeave={() => {
+        if(!data.hide){
+
         setIsHover(false);
         return;
+        }
       }}
     >
       <img alt="" src={image} className="card-img" />
+      {!data?.hide && (
+<>
       <button className="best-resturant-card-2-text">{buttonText}</button>
 
       <Box
@@ -45,6 +52,9 @@ function BestResturantCard({ image, buttonText }) {
           <img src={clockIcon} className="clock" />
         </Box>
       </Box>
+</>
+      )}
+
     </div>
   );
 }
@@ -52,7 +62,7 @@ function BestResturantCard({ image, buttonText }) {
 function BestResturants({ data }) {
   const conti = CommonContainer();
   const typo = typoMain();
-
+  console.log(data);
   const [isHover, setIsHover] = useState(false);
   const items = data.items.slice(1);
   const classes = bestresturantsStyle();
@@ -97,24 +107,28 @@ function BestResturants({ data }) {
               }}
             >
               <img alt="" src={data?.items[0].image} className="card-img" />
-              <button className="best-resturant-card-1-text">
-                {data?.items[0].title}
-              </button>
-              <Box
-                className={`${
-                  isHover ? "hover-color-1" : "d-none"
-                } best-resturant-card-1-hover-text-box`}
-              >
-                <Box display={"flex"} alignItems="center">
-                  <img src={likeIcon} className="like" />
-                  <span className="percentage">95%</span>
-                  <span className="views">(500+)</span>
+              {!data?.hide && (
+                <>
+                <button className="best-resturant-card-1-text">
+                  {data?.items[0].title}
+                </button>
+              
+                <Box
+                  className={`${
+                    isHover ? "hover-color-1" : "d-none"
+                  } best-resturant-card-1-hover-text-box`}
+                >
+                  <Box display={"flex"} alignItems="center">
+                    <img src={likeIcon} className="like" />
+                    <span className="percentage">95%</span>
+                    <span className="views">(500+)</span>
+                  </Box>
+                  <Box display={"flex"} alignItems="center">
+                    <span className="time-duration">20-30 Min</span>
+                    <img src={clockIcon} className="clock" />
+                  </Box>
                 </Box>
-                <Box display={"flex"} alignItems="center">
-                  <span className="time-duration">20-30 Min</span>
-                  <img src={clockIcon} className="clock" />
-                </Box>
-              </Box>
+                </>  )}
             </div>
           </Item1>
         </Grid>
@@ -126,6 +140,8 @@ function BestResturants({ data }) {
                 <Grid key={i} md={6} lg={6} sm={12} xs={12}>
                   <Item>
                     <BestResturantCard
+                    data={data}
+                      index={i}
                       image={item?.image}
                       buttonText={item?.title}
                     />
@@ -167,7 +183,7 @@ function BestResturantsOnMobile({ data }) {
 
 function DecideSection({ data }) {
   const isMobile = useMediaQuery("@media (max-width:768px)");
-
+  console.log(data);
   return (
     <>
       {isMobile ? (

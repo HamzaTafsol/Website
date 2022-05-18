@@ -27,6 +27,16 @@
   src: url("../fonts/Axiforma_new/Axiforma-Bold.ttf");
   font-weight: bold;
 }
+@font-face {
+  font-family: Axiforma-Med;
+  src: url("../fonts/Axiforma_new/Axiforma-Medium.ttf");
+  
+}
+@font-face {
+  font-family: Axiforma-Hea;
+  src: url("../fonts/Axiforma/axiforma/Axiforma-Heavy.ttf");
+  
+}
 
 /*//////////////////////////////////////////////////////////////////
   [ RESTYLE TAG ]*/

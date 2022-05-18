@@ -47,7 +47,9 @@ function MostPopularItemCard({ image, buttonText, title, icon }) {
         }`}
       >
         <img alt="" src={image} className="card-img" />
-       
+        <div className={`most-popular-hover-icon ${!isHover && "d-none"}`}>
+          <img alt="" src={icon} className="" />
+        </div>
         <p className={`most-popular-hover-title ${!isHover && "d-none"}`}>
           {buttonText}
         </p>
@@ -58,6 +60,7 @@ function MostPopularItemCard({ image, buttonText, title, icon }) {
           alignItems="center"
           className={`${isHover ? "most-popular-card-text-hover" : "d-none"}`}
         >
+          
           <Box alignItems="center" display="flex" component="div">
             <img src={likeIcon} className="icon-white" />
             <Typography component="span" className="percentage">

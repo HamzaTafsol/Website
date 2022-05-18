@@ -185,7 +185,7 @@ const SubcatModal = ({ open, handleClose, setOpenModal, name }) => {
       },
       "& .first_parent": {
         backgroundColor: "white",
-        marginBottom: "40px",
+        // marginBottom: "40px",
         padding: "50px 30px 10px 20px",
         boxShadow: "10px 10px 12px #00000029",
         zIndex: 99,
@@ -193,7 +193,7 @@ const SubcatModal = ({ open, handleClose, setOpenModal, name }) => {
       "& .second_parent": {
         backgroundColor: "white",
         padding: "30px",
-        borderRadius: "15px",
+        // borderRadius: "15px",
         boxShadow: "10px 10px 12px #00000029",
       },
       "& .top_main_p": { display: isMobileLarge ? "flex" : "block" },
@@ -800,7 +800,7 @@ const SubcatModal = ({ open, handleClose, setOpenModal, name }) => {
                     <div>45+kg</div>
                   </div>
                   <div className=" btn1" style={{ border: 0 }}>
-                    <button>Buscar</button>
+                    <button style={{cursor:"pointer"}}>Buscar</button>
                   </div>
                 </Item>
               </Grid>

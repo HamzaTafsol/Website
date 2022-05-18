@@ -2,6 +2,7 @@ import React, { useState, Component } from "react";
 import { FaFacebookF, FaInstagramSquare } from "react-icons/fa";
 import { GrTwitter } from "react-icons/gr";
 import { BsQuestionCircleFill, BsYoutube } from "react-icons/bs";
+import { FiMapPin } from "react-icons/fi";
 
 import { MdOutlineLanguage } from "react-icons/md";
 import { AiFillQuestionCircle, AiFillLinkedin } from "react-icons/ai";
@@ -43,11 +44,11 @@ function DesktopFooter() {
           </div>
           <ul className="footer-links">
             <li className="a-center">
-              <BsQuestionCircleFill
+              <FiMapPin
                 size={20.13}
                 className="icon-white-and-bold"
               />
-              <span className="icon-text">Ubicación</span>
+              <span className="icon-text">Ubicación s</span>
             </li>
             <li className="a-center">
               <MdOutlineLanguage className="icon-white-and-bold" size={20.13} />

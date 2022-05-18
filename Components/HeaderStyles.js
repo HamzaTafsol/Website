@@ -3,9 +3,27 @@ import { makeStyles } from "@mui/styles";
 export const headerStyles = makeStyles({
   appBar: {
     height: "120px",
-    boxShadow: "10px 10px 12px #00000029",
+    boxShadow: "unset",
     backgroundColor: "#ABE236",
     justifyContent: "center",
+    "&  .ul li": { 
+      cursor: "pointer" 
+    },
+    "&  .ul li:hover": { 
+      color: "#fff" 
+    },
+    "& ul li.end:hover": {
+      color: "unset"
+    },
+    "& ul li.end span.lang:hover": {
+      color: "white"
+    },
+    "&  .ul li span": { 
+      fontFamily: "axiforma-med" 
+    },
+    "& .ul li:hover": {
+      //  color: "#fff" 
+      },
     "@media (max-width:480px)": {
       height: "80px",
     },
@@ -45,6 +63,9 @@ export const headerStyles = makeStyles({
       flexGrow: "1",
       cursor: "pointer",
     },
+    "& .ul li:nth-child(7) p:hover": { color: "#000929 !important" },
+  "& .ul li:nth-child(7) svg:hover": { color: "#000929 !important" },
+  "& .ul li:nth-child(7)": { color: "#000929" },
     "& .navMain": {
       display: "flex",
       alignItems: "center",
@@ -56,10 +77,15 @@ export const headerStyles = makeStyles({
         border: "1px solid red",
         textDecoration: "none",
         fontSize: "15px",
-        color: "white",
+        color: "#000929",
+        fontFamily:"'axiforma-reg'",
         "@media (max-width:1440px)": {
           fontSize: "12px",
         },
+        "& span":{
+
+        },
+       
         "&:hover": {
           color: "yellow",
           borderBottom: "1px solid white",
@@ -169,6 +195,38 @@ export const headerStyles = makeStyles({
       display: "flex",
       alignItems: "center",
     },
+    " & .Location": { 
+      display: "flex", 
+      alignItems: "center" 
+    },
+    " & .Location p": { 
+      border: "0px !important", 
+    },
+    " & .Location p:hover": { 
+      color: "#fff !important", 
+    },
+    " & .Location p span": { 
+      display: "block", 
+      paddingTop: "1px",
+      fontFamily: "'Montserrat', sans-serif",
+      fontWeight: "400" 
+
+    },
+    " & .addtocart .notification_num": {
+      position: "absolute",
+      border: "2px solid #707070",
+      borderRadius: "50px",
+      height: "20px",
+      width: "20px",
+      padding: "3px 5px",
+      color: "#fff",
+      fontSize: "12px",
+      top: "-5px", 
+      right: "-14px"
+    },
+    " & .addtocart": { 
+      position: "relative" 
+    } 
   },
 
   /*  LOOK FOR SECTION */

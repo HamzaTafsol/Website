@@ -8,6 +8,7 @@ import { Grid, useMediaQuery } from "@mui/material";
 import allCountries from "../Components/AllLanguages";
 import { LanguagesStyle } from "./LanguagesStyle";
 import { makeStyles } from "@mui/styles";
+import Link from "next/link";
 
 const LanguageModal = ({ open, handleClose }) => {
   const classes = LanguagesStyle();
@@ -27,28 +28,25 @@ const LanguageModal = ({ open, handleClose }) => {
     height: !isMobile ? "88%" : "100%",
   };
   const useStyles = makeStyles({
-    Icon:{
-      "& .icon_close":{
-          position: "absolute",
-  right: !isMobile ? "0" : "90%", 
-  top:!isMobile ?"0": "30px",
-  
-      }
+    Icon: {
+      "& .icon_close": {
+        position: "absolute",
+        right: !isMobile ? "0" : "90%",
+        top: !isMobile ? "0" : "30px",
+      },
     },
-    modal_Head:{
-      position:"relative",
-      textAlign:"center",
-      
-
-  },
-  modal_HeadMob:{
-    width: "100%",
-    height: "100px",
-    display: "flex",
-    alignItems: "center",
-    backgroundColor: "#ABE236",
-    borderBottomRightRadius: "80px"
-  },
+    modal_Head: {
+      position: "relative",
+      textAlign: "center",
+    },
+    modal_HeadMob: {
+      width: "100%",
+      height: "100px",
+      display: "flex",
+      alignItems: "center",
+      backgroundColor: "#ABE236",
+      borderBottomRightRadius: "80px",
+    },
   });
 
   const customClasses = useStyles();
@@ -60,54 +58,55 @@ const LanguageModal = ({ open, handleClose }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}
-      className={classes.ModalMain}
-      >
+      <Box sx={style} className={classes.ModalMain}>
         <Grid container spacing={2} style={{ justifyContent: "center" }}>
           <Grid
             item
             md={12}
-            className={!isMobile ? customClasses.modal_Head : customClasses.modal_HeadMob }
+            className={
+              !isMobile ? customClasses.modal_Head : customClasses.modal_HeadMob
+            }
             style={{
               width: "100%",
             }}
           >
-            {!isMobile &&(
+            {!isMobile && (
               <>
-              
-              
-            
-            <div>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Combia tu idioma
-              </Typography>
-            </div>
-            </>
+                <div>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h1"
+                  >
+                    Change the language
+                  </Typography>
+                </div>
+              </>
             )}
             <div className={customClasses.Icon}>
               <CloseIcon onClick={handleClose} className="icon_close" />
             </div>
           </Grid>
-          </Grid>
-          <Grid container spacing={3} style={{ justifyContent: "center",padding:"0px 10px" }}
-          
+        </Grid>
+        <Grid
+          container
+          spacing={3}
+          style={{ justifyContent: "center", padding: "0px 10px" }}
           className="scroll_fix"
-          >
-
+        >
           <Grid
-              item
-              md={12}
-              style={{
-                width: "100%",
-                textAlign: "center"
-              }}
-              >
-            {isMobile &&(
-
-  <Typography id="modal-modal-title" variant="h6" component="h2">
-                Combia tu idioma
+            item
+            md={12}
+            style={{
+              width: "100%",
+              textAlign: "center",
+            }}
+          >
+            {isMobile && (
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Change the language
               </Typography>
-)}
+            )}
           </Grid>
 
           {allCountries?.map((item) => {
@@ -130,9 +129,9 @@ const LanguageModal = ({ open, handleClose }) => {
                   <Typography
                     id="modal-modal-title"
                     variant="h6"
-                    component="h2"
+                    component="hs"
                     style={{
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     {item?.language}
@@ -141,8 +140,14 @@ const LanguageModal = ({ open, handleClose }) => {
               </>
             );
           })}
-          </Grid>
-
+        </Grid>
+        <Grid item md={12} sm={12} xs={12} style={{textAlign:"center"}}>
+          <button  onClick={handleClose} className="lang_btn">
+        GUARDAR IDIOMA
+         </button>
+        
+   
+        </Grid>
       </Box>
     </Modal>
   );

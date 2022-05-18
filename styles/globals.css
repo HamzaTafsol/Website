@@ -30,10 +30,7 @@ a {
   /* src: url("../fonts/Axiforma/axiforma/Axiforma-ExtraBoldItalic.ttf"); */
   /* src: url("../../assets/fonts/Axiforma/axiforma/Axiforma-BoldItalic.ttf"); */
   src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Light.ttf");
-
-
 }
-
 
 /* Set Fonts */
 @font-face {
@@ -79,9 +76,14 @@ a {
   src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Book.ttf");
   font-weight: normal;
 }
+@font-face {
+  font-family: "axiforma-heavy";
+  src: url("../assets/fonts/Axiforma/axiforma/Axiforma-Heavy.ttf");
+  
+}
 div#bdr_0:focus-visible {
-  outline:  0px !important;
-} 
+  outline: 0px !important;
+}
 span,
 p,
 ul,
@@ -89,6 +91,15 @@ li,
 a,
 button {
   /* font-family: "axiforma-reg"; */
+}
+.Mui-focused fieldset {
+  border-color: #cbcbcb !important;
+}
+fieldset {
+  border-color: #cbcbcb !important;
+}
+.MuiOutlinedInput-root.MuiInputBase-root {
+  border-radius: 10px;
 }
 h1,
 h2,

@@ -4,16 +4,17 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { typoMain } from "../../Components/TypographyMain";
-import SpanishFlip from "../../Components/SpanishFlip";
-import BestResturants from "../../Components/BestResturants";
-import MostPopularInYourCity from "../../Components/MostPopularInYourCity";
-import Header from "../../Components/Header";
-import TrackOrderWithApp from "../../Components/TrackOrderWithApp";
-import Footer from "../../Components/Footer";
-import DogtorForBusiness from "../../Components/DogtorForBusiness";
-import TeamDogtor from "../../Components/TeamDogtor";
-import RiderSafety from "../../Components/RiderSafety";
+import { typoMain } from "../Components/TypographyMain";
+import SpanishFlip from "../Components/SpanishFlip";
+import BestResturants from "../Components/BestResturants";
+import MostPopularInYourCity from "../Components/MostPopularInYourCity";
+import Header from "../Components/Header";
+import TrackOrderWithApp from "../Components/TrackOrderWithApp";
+import Footer from "../Components/Footer";
+import DogtorForBusiness from "../Components/DogtorForBusiness";
+import TeamDogtor from "../Components/TeamDogtor";
+import RiderSafety from "../Components/RiderSafety";
+import { macdonald } from "../Components/Svgs";
 const HomePage = () => {
   const classes = typoMain();
   const Pet = "/images/pets.svg";
@@ -64,15 +65,21 @@ const HomePage = () => {
   const LiquorStore = "/images/liquor-store.svg";
   const Shopping2 = "/images/shopping_2.svg";
   const Medicinas = "/images/medicinas.svg";
+  const entrena_dog = "/images/entrena_dog.svg";
 
   const Scheduling = "/images/scheduling.svg";
   const Careg = "/images/careg.svg";
   const Trainedg = "/images/trainedg.svg";
   const Taxi = "/images/taxi.svg";
+  const game = "/images/game.svg";
+  const inditex = "/images/inditex.svg";
+  const farmatodoo = "/images/farmatodoo.svg";
 
   const Electronics = "/images/electronics.svg";
 
   const Ropa = "/images/ropa.svg";
+  const macdonald = "/images/macdonald.svg";
+  const mercado = "/images/mercado.svg";
   const Ring = "/images/anillo.svg";
   const SexShop = "/images/sex-shop.svg";
   const Fitness = "/images/fitness.svg";
@@ -86,7 +93,7 @@ const HomePage = () => {
   const Sorpredeme = "/images/sorprendeme.svg";
   const ChefPersonal = "/images/chef-personal.svg";
   const Genio1 = "/images/genio1.svg";
-
+//test
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -94,11 +101,21 @@ const HomePage = () => {
     textAlign: "center",
     color: theme.palette.text.secondary,
   }));
-
-
-
+ 
+  
 
   const data = [
+    {
+      hide:true,
+      title: "El centro comercial digital",
+      items: [
+        { image: macdonald, title: "McDonalssd’s" },
+        { image: mercado, title: "Taco Bell" },
+        { image: game, title: "Sushi Mix" },
+        { image: inditex, title: "Ginos" },
+        { image: farmatodoo, title: "Aloha Poke" },
+      ],
+    },
     {
       title: "Los mejores restaurantes",
       items: [
@@ -165,7 +182,7 @@ const HomePage = () => {
     {
       image: Resturant,
       title: "Restaurantes",
-      data: data[0],
+      data: data[1],
       subCategories: [
         { image: Burger, title: "Restaurantes" },
         { image: Catering, title: "Catering" },
@@ -175,16 +192,14 @@ const HomePage = () => {
         { image: ExclusiveDogtor, title: "Exclusivo Dogtor" },
         { image: Recommended, title: "Recomendado" },
         { image: Star, title: "Michellin" },
-       
       ],
     },
     {
       image: Stores,
       title: "Tiendas",
-      data: data[2],
+      data: data[3],
 
       subCategories: [
-  
         { image: Ropa, title: "Ropa" },
         { image: SexShop, title: "Sex Shop" },
         { image: Electronics, title: "Electronica" },
@@ -197,7 +212,7 @@ const HomePage = () => {
     {
       image: Market,
       title: "Market",
-      data: data[1],
+      data: data[2],
       subCategories: [
         { image: Market, title: "Mercado" },
         { image: LiquorStore, title: "Licoreria" },
@@ -208,39 +223,35 @@ const HomePage = () => {
     {
       image: Pet,
       title: "Mascotas",
-      data: data[3],
+      data: data[4],
       subCategories: [
-
         { image: Stores, title: "Rocky Shop" },
         { image: Scheduling, title: "Agendog" },
         { image: MyVet, title: "MyVet" },
         { image: Careg, title: "Cuidadog" },
-        { image: Trainedg, title: "Entrenadog" },
+        { image: entrena_dog, title: "Entrenadog" },
         { image: Taxi, title: "Deliveredog" },
-
-   
       ],
     },
     {
       image: Pharmacy,
       title: "Farmacia",
-      data: data[4],
+      data: data[5],
 
       subCategories: [
-              { image: Babies, title: "Bebes" },
+        { image: Babies, title: "Bebes" },
         { image: Medicinas, title: "Medicinas" },
         { image: WithRecipe, title: "Con recipe" },
         { image: NeedPersonal, title: "Necesidad Personal" },
         { image: Percent, title: "Ofertas" },
-     
       ],
     },
     {
       image: Whatever,
       title: "Lo que sea",
-      data: data[5],
+      data: data[6],
       subCategories: [
-      { image: Mariachis, title: "Mariachis" },
+        { image: Mariachis, title: "Mariachis" },
         { image: Aventra, title: "Aventura" },
         { image: Sorpredeme, title: "Sorprendeme" },
         { image: ChefPersonal, title: "Chef Personal" },
@@ -252,12 +263,18 @@ const HomePage = () => {
   const [selectedData, setSelectedData] = React.useState(data[0]);
   const [selectedCategory, setSelectedCategory] = React.useState({});
   const [x, setX] = React.useState(0);
+console.log(selectedData)
 
-  React.useLayoutEffect(() => {
+const setterFunction = (num) =>{
+  setSelectedData(data[0])
+}
+  React.useLayoutEffect(
+    () => {
     setTimeout(() => {
       setX(1);
     }, 2000);
-  }, []);
+  }
+  , []);
 
   return (
     <Box
@@ -269,6 +286,7 @@ const HomePage = () => {
       <Header />
 
       <SpanishFlip
+      setterFunction={setterFunction}
         circleCardsData={circleCardsData}
         setSelectedData={setSelectedData}
         setSelectedCategory={setSelectedCategory}
@@ -285,5 +303,12 @@ const HomePage = () => {
     </Box>
   );
 };
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       test: true,
+//     }, // will be passed to the page component as props
+//   };
+// }
 
 export default HomePage;
